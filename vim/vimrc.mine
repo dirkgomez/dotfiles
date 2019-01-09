@@ -1,0 +1,107 @@
+" Get started
+" Create .vimrc with
+"   set runtimepath+=~/vim
+"   source ~/vim/vimrc.mine
+"
+" Install neobundle
+"   curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+"
+"
+"
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
+if has('vim_starting')
+ if &compatible
+   set nocompatible               " Be iMproved
+ endif
+
+ " Required:
+ set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+NeoBundle 'sheerun/vim-polyglot.git'
+NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'ntpeters/vim-better-whitespace'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-fugitive.git'
+NeoBundle 'tpope/vim-rails.git'
+NeoBundle 'tpope/vim-bundler.git'
+NeoBundle 'AtomLinter/linter-rubocop.git'
+NeoBundle 'tpope/vim-surround.git'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'plasticboy/vim-markdown'
+
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+set notimeout          " don't timeout on mappings
+set ttimeout           " do timeout on terminal key codes
+set timeoutlen=100     " timeout after 100 msec
+
+set textwidth=80
+
+set matchpairs=(:),{:},[:],<:>
+set ruler
+set laststatus=2
+
+set nobackup
+
+" Always edit in utf-8:
+set encoding=utf-8
+
+"Number of lines to keep above/below cursor
+set scrolloff=2
+
+" 'compatible' is not set
+set nocp
+
+set list
+set listchars=tab:.\
+let python_highlight_all = 1
+
+set tags+=~/.vim/tags
+set tags+=~/.tags/odin-tags
+
+" Indentation without hard tabs
+set expandtab
+set shiftwidth=2
+set autoindent
+set smartindent
+
+" Show line, column number
+set ruler
+
+" Show syntax highlighting
+syntax on
+
+"Don't wrap text after a one-letter word
+set formatoptions=1
+
+filetype plugin on
+filetype indent on
+
+" Persistent Undo (vim 7.3 and later)
+if exists('&undofile') && !&undofile
+  set undodir=~/.vim_runtime/undodir
+  set undofile
+endif
+
