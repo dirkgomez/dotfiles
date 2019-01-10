@@ -1,2 +1,5 @@
-echo "set runtimepath+=~/dotfiles/vim" > ~/.vimrc
-echo "source ~/dotfiles/vim/vimrc.mine" >> ~/.vimrc
+cat << EOF > ~/vimrc
+set runtimepath+=~/dotfiles/vim
+source ~/dotfiles/vim/vimrc.mine
+EOF
+mv ~/vimrc ~/.vimrc
