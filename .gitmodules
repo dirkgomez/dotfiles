@@ -1,3 +1,0 @@
-[submodule "vim/packages/start/python-mode"]
-	path = vim/packages/start/python-mode
-	url = https://github.com/python-mode/python-mode.git
