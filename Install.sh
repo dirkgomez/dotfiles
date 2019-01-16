@@ -21,6 +21,8 @@ function git_clone_or_pull {
 }
 
 git_clone_or_pull https://github.com/sheerun/vim-polyglot ${START_PLUGINS_DIR}/vim-polyglot
+git_clone_or_pull https://github.com/python-mode/python-mode.git ${START_PLUGINS_DIR}/python-mode
+(cd ${START_PLUGINS_DIR}/python-mode && git submodule update --init --recursive)
 
 
 
