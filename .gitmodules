@@ -1,6 +1,3 @@
-[submodule "vim/packages/ctrlp.vim"]
-	path = vim/packages/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
 [submodule "vim/packages/start/python-mode"]
 	path = vim/packages/start/python-mode
 	url = https://github.com/python-mode/python-mode.git
