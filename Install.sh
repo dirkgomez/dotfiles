@@ -31,6 +31,7 @@ git_clone_or_pull https://github.com/airblade/vim-gitgutter.git ${START_PLUGINS_
 git_clone_or_pull https://github.com/tpope/commentary.git ${START_PLUGINS_DIR}/commentary.git
 git_clone_or_pull https://github.com/tpope/surround.git ${START_PLUGINS_DIR}/surround.git
 git_clone_or_pull https://github.com/tpope/vim-fugitive.git ${START_PLUGINS_DIR}/vim-fugitive.git
+git_clone_or_pull https://github.com/w0rp/ale.git ${START_PLUGINS_DIR}/ale.git
 
 
 
