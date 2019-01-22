@@ -6,18 +6,7 @@ if has('vim_starting')
  endif
 endif
 
-" Required:
-filetype plugin indent on
-
-set notimeout          " don't timeout on mappings
-set ttimeout           " do timeout on terminal key codes
-set timeoutlen=100     " timeout after 100 msec
-
-set textwidth=80
-
 set matchpairs=(:),{:},[:],<:>
-set ruler
-set laststatus=2
 
 set nobackup
 
@@ -27,16 +16,6 @@ set encoding=utf-8
 "Number of lines to keep above/below cursor
 set scrolloff=2
 
-" 'compatible' is not set
-set nocp
-
-set list
-set listchars=tab:.\
-let python_highlight_all = 1
-
-set tags+=~/.vim/tags
-set tags+=~/.tags/odin-tags
-
 " Indentation without hard tabs
 set expandtab
 set shiftwidth=2
@@ -45,15 +24,13 @@ set smartindent
 
 " Show line, column number
 set ruler
+set laststatus=2
 
 " Show syntax highlighting
 syntax on
 
 "Don't wrap text after a one-letter word
 set formatoptions=1
-
-filetype plugin on
-filetype indent on
 
 " Persistent Undo (vim 7.3 and later)
 if exists('&undofile') && !&undofile
