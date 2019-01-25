@@ -10,6 +10,9 @@ set matchpairs=(:),{:},[:],<:>
 
 set nobackup
 
+let mapleader = ","
+let maplocalleader = ",,"
+
 " Always edit in utf-8:
 set encoding=utf-8
 
@@ -38,6 +41,8 @@ if exists('&undofile') && !&undofile
   set undofile
 endif
 
+" Python mode settings
 let g:pymode_options_max_line_length = 132
+let g:pymode_python = 'python3'
 
 colorscheme base16-default-dark

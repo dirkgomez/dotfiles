@@ -30,22 +30,10 @@ function cat_to_file_if_not_exists {
 START_PLUGINS_DIR=~/.vim/pack/plugins/start
 mkdir -p START_PLUGINS_DIR
 
-echo "Installing fzf"
-if [ "$(uname)" == "Darwin" ]; then
-  brew install fzf
-  VIMRC_FZF="set runtimepath+=/usr/local/opt/fzf"
-elif [ "$(awk -F= '/^NAME/{print $2}' /etc/os-release)" == "\"Ubuntu\"" ]; then
-  git_clone_or_pull https://github.com/junegunn/fzf.git ~/.fzf --"depth 1"
-  ~/.fzf/install
-  VIMRC_FZF="set runtimepath+=~/.fzf"
-  gitconfig-aliases
-fi
-
 git_clone_or_pull https://github.com/sheerun/vim-polyglot ${START_PLUGINS_DIR}/vim-polyglot
 git_clone_or_pull https://github.com/python-mode/python-mode.git ${START_PLUGINS_DIR}/python-mode
 (cd ${START_PLUGINS_DIR}/python-mode && git submodule update --init --recursive)
-git_clone_or_pull https://github.com/mileszs/ack.vim.git ${START_PLUGINS_DIR}/ack.vim
-git_clone_or_pull https://github.com/airblade/vim-gitgutter.git ${START_PLUGINS_DIR}/vim-gitgutter
+git_clone_or_pull https://github.com/mileszs/ack.vim.git ${START_PLUGINS_DIR}/ack
 git_clone_or_pull https://github.com/tpope/commentary.git ${START_PLUGINS_DIR}/commentary
 git_clone_or_pull https://github.com/tpope/surround.git ${START_PLUGINS_DIR}/surround
 git_clone_or_pull https://github.com/tpope/vim-fugitive.git ${START_PLUGINS_DIR}/vim-fugitive
@@ -58,9 +46,7 @@ git_clone_or_pull https://tpope.io/vim/projectionist.git ${START_PLUGINS_DIR}/pr
 git_clone_or_pull https://github.com/SirVer/ultisnips ${START_PLUGINS_DIR}/ultisnips
 git_clone_or_pull https://github.com/garbas/vim-snipmate ${START_PLUGINS_DIR}/vim-snipmate
 git_clone_or_pull https://github.com/honza/vim-snippets.git ${START_PLUGINS_DIR}/vim-snippets
-
-
-
+git_clone_or_pull https://github.com/ctrlpvim/ctrlp.vim ${START_PLUGINS_DIR}/ctrlp
 
 if [ "$(uname)" == "Darwin" ]; then
   BASH_CFG="$HOME/.bash_profile"
