@@ -50,6 +50,7 @@ git_clone_or_pull https://github.com/tpope/commentary.git ${START_PLUGINS_DIR}/c
 git_clone_or_pull https://github.com/tpope/surround.git ${START_PLUGINS_DIR}/surround.git
 git_clone_or_pull https://github.com/tpope/vim-fugitive.git ${START_PLUGINS_DIR}/vim-fugitive.git
 git_clone_or_pull https://github.com/w0rp/ale.git ${START_PLUGINS_DIR}/ale.git
+git_clone_or_pull https://github.com/morhetz/gruvbox.git ${START_PLUGINS_DIR}/ale.git
 
 if [ "$(uname)" == "Darwin" ]; then
   BASH_CFG="$HOME/.bash_profile"

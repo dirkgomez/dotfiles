@@ -39,3 +39,5 @@ if exists('&undofile') && !&undofile
 endif
 
 let g:pymode_options_max_line_length = 132
+
+colorscheme gruvbox
