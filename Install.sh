@@ -18,7 +18,7 @@ function echo_to_file_if_not_exists {
   grep -qF -- "$EXISTS" "$FILE" || echo "$TEXT" >> "$FILE"
 }
 
-function cat_to_ini_file {
+function cat_to_file_if_not_exists {
   SECTION=$1
   TARGET=$2
   SOURCE=$3
@@ -46,11 +46,21 @@ git_clone_or_pull https://github.com/python-mode/python-mode.git ${START_PLUGINS
 (cd ${START_PLUGINS_DIR}/python-mode && git submodule update --init --recursive)
 git_clone_or_pull https://github.com/mileszs/ack.vim.git ${START_PLUGINS_DIR}/ack.vim
 git_clone_or_pull https://github.com/airblade/vim-gitgutter.git ${START_PLUGINS_DIR}/vim-gitgutter
-git_clone_or_pull https://github.com/tpope/commentary.git ${START_PLUGINS_DIR}/commentary.git
-git_clone_or_pull https://github.com/tpope/surround.git ${START_PLUGINS_DIR}/surround.git
-git_clone_or_pull https://github.com/tpope/vim-fugitive.git ${START_PLUGINS_DIR}/vim-fugitive.git
-git_clone_or_pull https://github.com/w0rp/ale.git ${START_PLUGINS_DIR}/ale.git
-git_clone_or_pull https://github.com/morhetz/gruvbox.git ${START_PLUGINS_DIR}/ale.git
+git_clone_or_pull https://github.com/tpope/commentary.git ${START_PLUGINS_DIR}/commentary
+git_clone_or_pull https://github.com/tpope/surround.git ${START_PLUGINS_DIR}/surround
+git_clone_or_pull https://github.com/tpope/vim-fugitive.git ${START_PLUGINS_DIR}/vim-fugitive
+git_clone_or_pull https://github.com/w0rp/ale.git ${START_PLUGINS_DIR}/ale
+git_clone_or_pull https://github.com/morhetz/gruvbox.git ${START_PLUGINS_DIR}/gruvbox
+git_clone_or_pull https://github.com/MarcWeber/vim-addon-mw-utils ${START_PLUGINS_DIR}/vim-addon-mw-utils
+git_clone_or_pull https://github.com/chriskempson/base16-vim ${START_PLUGINS_DIR}/base16-vim
+git_clone_or_pull https://github.com/tpope/vim-vinegar.git ${START_PLUGINS_DIR}/vim-vinegar
+git_clone_or_pull https://tpope.io/vim/projectionist.git ${START_PLUGINS_DIR}/projectionist
+git_clone_or_pull https://github.com/SirVer/ultisnips ${START_PLUGINS_DIR}/ultisnips
+git_clone_or_pull https://github.com/garbas/vim-snipmate ${START_PLUGINS_DIR}/vim-snipmate
+git_clone_or_pull https://github.com/honza/vim-snippets.git ${START_PLUGINS_DIR}/vim-snippets
+
+
+
 
 if [ "$(uname)" == "Darwin" ]; then
   BASH_CFG="$HOME/.bash_profile"
