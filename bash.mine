@@ -24,3 +24,8 @@ alias gitchangelog="git log --oneline --no-merges ${1}..HEAD"
 alias gittopcontrib="git shortlog -ns"
 alias gitdiff="git difftool $1"
 
+
+# homebrew clean update
+alias brewupdate="brew update && brew upgrade && brew cleanup; brew doctor"
+
+export PATH="/usr/local/sbin:$PATH"
