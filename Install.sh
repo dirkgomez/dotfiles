@@ -41,7 +41,6 @@ git_clone_or_pull https://github.com/w0rp/ale.git ${START_PLUGINS_DIR}/ale
 git_clone_or_pull https://github.com/morhetz/gruvbox.git ${START_PLUGINS_DIR}/gruvbox
 git_clone_or_pull https://github.com/MarcWeber/vim-addon-mw-utils ${START_PLUGINS_DIR}/vim-addon-mw-utils
 git_clone_or_pull https://github.com/chriskempson/base16-vim ${START_PLUGINS_DIR}/base16-vim
-git_clone_or_pull https://github.com/tpope/vim-vinegar.git ${START_PLUGINS_DIR}/vim-vinegar
 git_clone_or_pull https://tpope.io/vim/projectionist.git ${START_PLUGINS_DIR}/projectionist
 git_clone_or_pull https://github.com/SirVer/ultisnips ${START_PLUGINS_DIR}/ultisnips
 git_clone_or_pull https://github.com/garbas/vim-snipmate ${START_PLUGINS_DIR}/vim-snipmate
