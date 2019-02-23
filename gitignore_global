@@ -36,8 +36,8 @@
 ehthumbs.db
 Thumbs.db
 
-*~
 # vim #
 #######
-*.swp
-*.swo
+*~
+*.bak
+*.sw?
