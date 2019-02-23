@@ -28,4 +28,7 @@ alias gitdiff="git difftool $1"
 # homebrew clean update
 alias brewupdate="brew update && brew upgrade && brew cleanup; brew doctor"
 
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$HOME/go/bin/:$PATH"
+mkdir -p $HOME/Code/go/src
+mkdir -p $HOME/Code/go/bin
+export GOPATH=$HOME/Code/go/
