@@ -45,4 +45,4 @@ endif
 let g:pymode_options_max_line_length = 132
 let g:pymode_python = 'python3'
 
-colorscheme base16-default-dark
+colorscheme gruvbox
