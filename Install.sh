@@ -42,9 +42,6 @@ git_clone_or_pull https://github.com/morhetz/gruvbox.git ${START_PLUGINS_DIR}/gr
 git_clone_or_pull https://github.com/MarcWeber/vim-addon-mw-utils ${START_PLUGINS_DIR}/vim-addon-mw-utils
 git_clone_or_pull https://github.com/chriskempson/base16-vim ${START_PLUGINS_DIR}/base16-vim
 git_clone_or_pull https://tpope.io/vim/projectionist.git ${START_PLUGINS_DIR}/projectionist
-git_clone_or_pull https://github.com/SirVer/ultisnips ${START_PLUGINS_DIR}/ultisnips
-git_clone_or_pull https://github.com/garbas/vim-snipmate ${START_PLUGINS_DIR}/vim-snipmate
-git_clone_or_pull https://github.com/honza/vim-snippets.git ${START_PLUGINS_DIR}/vim-snippets
 git_clone_or_pull https://github.com/ctrlpvim/ctrlp.vim ${START_PLUGINS_DIR}/ctrlp
 
 if [ "$(uname)" == "Darwin" ]; then
