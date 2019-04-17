@@ -43,11 +43,14 @@ git_clone_or_pull https://github.com/MarcWeber/vim-addon-mw-utils ${START_PLUGIN
 git_clone_or_pull https://github.com/chriskempson/base16-vim ${START_PLUGINS_DIR}/base16-vim
 git_clone_or_pull https://tpope.io/vim/projectionist.git ${START_PLUGINS_DIR}/projectionist
 git_clone_or_pull https://github.com/ctrlpvim/ctrlp.vim ${START_PLUGINS_DIR}/ctrlp
+git_clone_or_pull https://github.com/ludovicchabant/vim-gutentags ${START_PLUGINS_DIR}/vim-gutentags
 
 if [ "$(uname)" == "Darwin" ]; then
   BASH_CFG="$HOME/.bash_profile"
+  brew install ctags
 elif [ "$(awk -F= '/^NAME/{print $2}' /etc/os-release)" == "\"Ubuntu\"" ]; then
   BASH_CFG="$HOME/.bashrc"
+  apt-get install ctags
 fi
 
 echo_to_file_if_not_exists "\"dotfiles/bash.mine\"" $BASH_CFG "source $HOME/dotfiles/bash.mine"
