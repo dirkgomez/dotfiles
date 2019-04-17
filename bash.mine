@@ -25,7 +25,7 @@ alias gittopcontrib="git shortlog -ns"
 alias gitdiff="git difftool $1"
 
 # homebrew clean update
-alias brewupdate="brew update && brew upgrade && brew cleanup; brew doctor"
+alias brewupdate="brew update && brew upgrade && brew cleanup; brew doctor; brew cask upgrade"
 
 export PATH="$PATH:/usr/local/sbin:$HOME/go/bin/"
 mkdir -p $HOME/Code/go/src
