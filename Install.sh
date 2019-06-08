@@ -64,3 +64,4 @@ EOF
 
 pip3 install python-language-server
 vim +'CocInstall coc-python coc-json' +qall
+vim -c "helptags ~/.vim/pack/plugins/start/coc.nvim"
