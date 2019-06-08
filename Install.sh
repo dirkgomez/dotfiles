@@ -60,7 +60,6 @@ cat_to_file_if_not_exists '\[alias\]' "$HOME/.gitconfig" "$HOME/dotfiles/gitconf
 
 cat << EOF > $HOME/.vimrc
 source ~/dotfiles/vim/vimrc.mine
-$VIMRC_FZF
 EOF
 
 pip3 install python-language-server
