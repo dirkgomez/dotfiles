@@ -44,6 +44,24 @@ endif
 " Python mode settings
 let g:pymode_options_max_line_length = 132
 let g:pymode_python = 'python3'
+let g:pymode_trim_whitespaces = 1
+let g:pymode_virtualenv = 1
+let g:pymode_doc = 1
+
+
+"CoC config
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'
+let g:coc_status_error_sign = '•'
+let g:coc_status_warning_sign = '•'
+let g:coc_global_extensions =['coc-snippets','coc-prettier','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight','coc-git','coc-lists','coc-post','coc-stylelint']
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
 colorscheme gruvbox
 set background=dark
+

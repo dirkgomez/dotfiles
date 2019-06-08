@@ -31,3 +31,6 @@ export PATH="$PATH:/usr/local/sbin:$HOME/go/bin/"
 mkdir -p $HOME/Code/go/src
 mkdir -p $HOME/Code/go/bin
 export GOPATH=$HOME/Code/go/
+
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
