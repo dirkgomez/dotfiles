@@ -21,7 +21,6 @@ set scrolloff=2
 
 " Indentation without hard tabs
 set expandtab
-set shiftwidth=2
 set autoindent
 set smartindent
 
@@ -48,6 +47,10 @@ let g:pymode_trim_whitespaces = 1
 let g:pymode_virtualenv = 1
 let g:pymode_doc = 1
 
+ " Foilding"
+set foldenable                      " enable folding
+set foldmethod=syntax               " global folding method
+set foldlevelstart=1                " folds with level 1 aren't closed
 
 "CoC config
 let g:coc_status_warning_sign = '•'
