@@ -34,23 +34,12 @@ syntax on
 "Don't wrap text after a one-letter word
 set formatoptions=1
 
-" Persistent Undo (vim 7.3 and later)
-if exists('&undofile') && !&undofile
-  set undodir=~/.vim_runtime/undodir
-  set undofile
-endif
-
-" Python mode settings
-let g:pymode_options_max_line_length = 132
-let g:pymode_python = 'python3'
-let g:pymode_trim_whitespaces = 1
-let g:pymode_virtualenv = 1
-let g:pymode_doc = 1
-
- " Foilding"
+ " Folding
 set foldenable                      " enable folding
 set foldmethod=syntax               " global folding method
-set foldlevelstart=1                " folds with level 1 aren't closed
+set foldlevelstart=99               " folds with level 1 aren't closed
+
+autocmd FileType python setlocal foldmethod=indent
 
 "CoC config
 let g:coc_status_warning_sign = '•'

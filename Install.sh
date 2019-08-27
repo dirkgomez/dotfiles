@@ -39,7 +39,7 @@ START_PLUGINS_DIR=~/.vim/pack/plugins/start
 mkdir -p START_PLUGINS_DIR
 
 git_clone_or_pull https://github.com/sheerun/vim-polyglot ${START_PLUGINS_DIR}/vim-polyglot
-git_clone_or_pull https://github.com/python-mode/python-mode.git ${START_PLUGINS_DIR}/python-mode
+#git_clone_or_pull https://github.com/python-mode/python-mode.git ${START_PLUGINS_DIR}/python-mode
 #(cd ${START_PLUGINS_DIR}/python-mode && git submodule update --init --recursive)
 git_clone_or_pull https://github.com/mileszs/ack.vim.git ${START_PLUGINS_DIR}/ack
 git_clone_or_pull https://github.com/tpope/commentary.git ${START_PLUGINS_DIR}/commentary
