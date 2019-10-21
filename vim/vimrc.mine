@@ -1,10 +1,4 @@
-if !1 | finish | endif
-
-if has('vim_starting')
- if &compatible
-   set nocompatible               " Be iMproved
- endif
-endif
+set nocompatible
 
 set matchpairs=(:),{:},[:],<:>
 
@@ -23,6 +17,7 @@ set scrolloff=2
 set expandtab
 set autoindent
 set smartindent
+set tabstop=2
 
 " Show line, column number
 set ruler
@@ -41,10 +36,11 @@ set foldlevelstart=99               " folds with level 1 aren't closed
 
 autocmd FileType python setlocal foldmethod=indent
 
-"CoC config
-let g:coc_status_warning_sign = '•'
-let g:coc_global_extensions =['coc-snippets','coc-prettier','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight','coc-git','coc-lists','coc-post','coc-stylelint']
-
 colorscheme gruvbox
 set background=dark
 
+" Pyhon mode
+let g:pymode_python = 'python3'
+let g:pymode_options_max_line_length = 131
+
+helptags ALL
