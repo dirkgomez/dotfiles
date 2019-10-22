@@ -39,6 +39,7 @@ START_PLUGINS_DIR=~/.vim/pack/plugins/start
 mkdir -p START_PLUGINS_DIR
 
 git_clone_or_pull https://github.com/python-mode/python-mode.git ${START_PLUGINS_DIR}/python-mode
+git_clone_or_pull https://github.com/elzr/vim-json ${START_PLUGINS_DIR}/vim-json
 git_clone_or_pull https://github.com/mileszs/ack.vim.git ${START_PLUGINS_DIR}/ack
 git_clone_or_pull https://github.com/tpope/commentary.git ${START_PLUGINS_DIR}/commentary
 git_clone_or_pull https://github.com/morhetz/gruvbox.git ${START_PLUGINS_DIR}/gruvbox
