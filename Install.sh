@@ -1,4 +1,4 @@
-#!/bin/bash -xv
+#!/bin/bash
 
 function git_clone_or_pull {
   echo "Cloning $1"
@@ -18,14 +18,6 @@ function echo_to_file_if_not_exists {
   grep -qF -- "$EXISTS" "$FILE" || echo "$TEXT" >> "$FILE"
 }
 
-function cat_to_file_if_not_exists {
-  SECTION=$1
-  TARGET=$2
-  SOURCE=$3
-  sed "/$SECTION/,/^\[/d" $TARGET
-  cat "$SOURCE" >> "$TARGET"
-}
-
 if [ "$(uname)" == "Darwin" ]; then
   brew install ctags
 elif [ "$(awk -F= '/^NAME/{print $2}' /etc/os-release)" == "\"Ubuntu\"" ]; then
@@ -41,15 +33,15 @@ mkdir -p START_PLUGINS_DIR
 git_clone_or_pull https://github.com/python-mode/python-mode.git ${START_PLUGINS_DIR}/python-mode
 git_clone_or_pull https://github.com/elzr/vim-json ${START_PLUGINS_DIR}/vim-json
 git_clone_or_pull https://github.com/mileszs/ack.vim.git ${START_PLUGINS_DIR}/ack
-git_clone_or_pull https://github.com/tpope/commentary.git ${START_PLUGINS_DIR}/commentary
 git_clone_or_pull https://github.com/morhetz/gruvbox.git ${START_PLUGINS_DIR}/gruvbox
 git_clone_or_pull https://github.com/chriskempson/base16-vim ${START_PLUGINS_DIR}/base16-vim
 git_clone_or_pull https://github.com/ctrlpvim/ctrlp.vim ${START_PLUGINS_DIR}/ctrlp
 git_clone_or_pull https://github.com/davidhalter/jedi-vim.git ${START_PLUGINS_DIR}/jedi.vim
 
 cp zsh-dirk ~/.oh-my-zsh/custom/
+cp gitconfig-aliases ~/.gitconfig
 
-cat_to_file_if_not_exists '\[alias\]' "$HOME/.gitconfig" "$HOME/dotfiles/gitconfig-aliases"
+git config --global user.email "dirk@dirkgomez.de"
 
 cat << EOF > $HOME/.vimrc
 source ~/dotfiles/vim/vimrc.mine
