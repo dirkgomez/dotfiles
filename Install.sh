@@ -27,12 +27,12 @@ function cat_to_file_if_not_exists {
 }
 
 if [ "$(uname)" == "Darwin" ]; then
-  BASH_CFG="$HOME/.bash_profile"
   brew install ctags
 elif [ "$(awk -F= '/^NAME/{print $2}' /etc/os-release)" == "\"Ubuntu\"" ]; then
-  BASH_CFG="$HOME/.bashrc"
   apt-get install ctags
 fi
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 
 # create packages directory
 START_PLUGINS_DIR=~/.vim/pack/plugins/start
@@ -47,7 +47,7 @@ git_clone_or_pull https://github.com/chriskempson/base16-vim ${START_PLUGINS_DIR
 git_clone_or_pull https://github.com/ctrlpvim/ctrlp.vim ${START_PLUGINS_DIR}/ctrlp
 git_clone_or_pull https://github.com/davidhalter/jedi-vim.git ${START_PLUGINS_DIR}/jedi.vim
 
-echo_to_file_if_not_exists "\"dotfiles/bash.mine\"" $BASH_CFG "source $HOME/dotfiles/bash.mine"
+cp zsh-dirk ~/.oh-my-zsh/custom/
 
 cat_to_file_if_not_exists '\[alias\]' "$HOME/.gitconfig" "$HOME/dotfiles/gitconfig-aliases"
 
