@@ -1,10 +1,4 @@
-if !1 | finish | endif
-
-if has('vim_starting')
- if &compatible
-   set nocompatible               " Be iMproved
- endif
-endif
+set nocompatible
 
 set matchpairs=(:),{:},[:],<:>
 
@@ -16,13 +10,15 @@ let maplocalleader = ",,"
 " Always edit in utf-8:
 set encoding=utf-8
 
-"Number of lines to keep above/below cursor
+" Number of lines to keep above/below cursor
 set scrolloff=2
 
 " Indentation without hard tabs
 set expandtab
 set autoindent
 set smartindent
+set tabstop=2
+set shiftwidth=2
 
 " Show line, column number
 set ruler
@@ -30,21 +26,27 @@ set laststatus=2
 
 " Show syntax highlighting
 syntax on
+filetype plugin indent on
 
-"Don't wrap text after a one-letter word
+" Don't wrap text after a one-letter word
 set formatoptions=1
 
- " Folding
+" Folding
 set foldenable                      " enable folding
 set foldmethod=syntax               " global folding method
 set foldlevelstart=99               " folds with level 1 aren't closed
 
-autocmd FileType python setlocal foldmethod=indent
-
-"CoC config
-let g:coc_status_warning_sign = '•'
-let g:coc_global_extensions =['coc-snippets','coc-prettier','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight','coc-git','coc-lists','coc-post','coc-stylelint']
-
+" Color scheme settings
 colorscheme gruvbox
 set background=dark
 
+" Pyhon mode
+let g:pymode_python = 'python3'
+let g:pymode_options_max_line_length = 131
+
+" YAML settings
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType template setlocal ts=2 sts=2 sw=2 expandtab
+
+" Recreate help tags
+helptags ALL
