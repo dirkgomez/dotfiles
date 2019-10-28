@@ -4,15 +4,9 @@ function git_clone_or_pull {
   echo "Cloning $1"
   if [ ! -d $2 ]
     then
-<<<<<<< HEAD
-    git clone --recursive $3 $1 $2
-  else
-    (cd $2 && git pull --recurse-submodules --rebase)
-=======
     git clone  --recurse-submodules  $3 $1 $2
   else
     (cd $2 && git pull --rebase; git submodule update --init --recursive)
->>>>>>> 3cdc83700250759fe33a5ee63bc948083c628b21
   fi
 }
 
