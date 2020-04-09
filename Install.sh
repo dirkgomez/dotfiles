@@ -31,14 +31,14 @@ START_PLUGINS_DIR=~/.vim/pack/plugins/start
 mkdir -p START_PLUGINS_DIR
 
 git_clone_or_pull https://github.com/python-mode/python-mode.git ${START_PLUGINS_DIR}/python-mode
-git_clone_or_pull https://github.com/elzr/vim-json ${START_PLUGINS_DIR}/vim-json
 git_clone_or_pull https://github.com/mileszs/ack.vim.git ${START_PLUGINS_DIR}/ack
 git_clone_or_pull https://github.com/morhetz/gruvbox.git ${START_PLUGINS_DIR}/gruvbox
 git_clone_or_pull https://github.com/chriskempson/base16-vim ${START_PLUGINS_DIR}/base16-vim
 git_clone_or_pull https://github.com/ctrlpvim/ctrlp.vim ${START_PLUGINS_DIR}/ctrlp
 git_clone_or_pull https://github.com/davidhalter/jedi-vim.git ${START_PLUGINS_DIR}/jedi.vim
 
-cp zsh-dirk ~/.oh-my-zsh/custom/
+mv dirk.zsh ~/.oh-my-zsh/custom/
+mv dirk-nocheckin.zsh ~/.oh-my-zsh/custom/
 cp gitconfig-aliases ~/.gitconfig
 
 git config --global user.email "dirk@dirkgomez.de"
