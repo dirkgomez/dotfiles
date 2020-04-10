@@ -37,12 +37,14 @@ git_clone_or_pull https://github.com/chriskempson/base16-vim ${START_PLUGINS_DIR
 git_clone_or_pull https://github.com/ctrlpvim/ctrlp.vim ${START_PLUGINS_DIR}/ctrlp
 git_clone_or_pull https://github.com/davidhalter/jedi-vim.git ${START_PLUGINS_DIR}/jedi.vim
 
-mv dirk.zsh ~/.oh-my-zsh/custom/
-mv dirk-nocheckin.zsh ~/.oh-my-zsh/custom/
-cp gitconfig-aliases ~/.gitconfig
+cp dirk.zsh ~/.oh-my-zsh/custom/
+cp dirk-nocheckin.zsh ~/.oh-my-zsh/custom/
 
 git config --global user.email "dirk@dirkgomez.de"
 
 cat << EOF > $HOME/.vimrc
 source ~/dotfiles/vim/vimrc.mine
 EOF
+
+echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
+
