@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 function git_clone_or_pull {
   echo "Cloning $1"
@@ -38,7 +38,7 @@ git_clone_or_pull https://github.com/ctrlpvim/ctrlp.vim ${START_PLUGINS_DIR}/ctr
 git_clone_or_pull https://github.com/davidhalter/jedi-vim.git ${START_PLUGINS_DIR}/jedi.vim
 
 cp dirk.zsh ~/.oh-my-zsh/custom/
-cp dirk-nocheckin.zsh ~/.oh-my-zsh/custom/
+cp dirk-nocheckin.zsh ~/.oh-my-zsh/custom/ || true
 
 git config --global user.email "dirk@dirkgomez.de"
 
