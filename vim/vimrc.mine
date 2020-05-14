@@ -56,3 +56,8 @@ autocmd FileType template setlocal ts=2 sts=2 sw=2 expandtab
 
 " Recreate help tags
 helptags ALL
+
+" Tooltips for typescript
+set ballooneval
+autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+

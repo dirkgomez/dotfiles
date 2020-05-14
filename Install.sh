@@ -26,7 +26,6 @@ fi
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 
-# create packages directory
 START_PLUGINS_DIR=~/.vim/pack/plugins/start
 mkdir -p START_PLUGINS_DIR
 
@@ -36,9 +35,11 @@ git_clone_or_pull https://github.com/morhetz/gruvbox.git ${START_PLUGINS_DIR}/gr
 git_clone_or_pull https://github.com/chriskempson/base16-vim ${START_PLUGINS_DIR}/base16-vim
 git_clone_or_pull https://github.com/ctrlpvim/ctrlp.vim ${START_PLUGINS_DIR}/ctrlp
 git_clone_or_pull https://github.com/davidhalter/jedi-vim.git ${START_PLUGINS_DIR}/jedi.vim
+git_clone_or_pull https://github.com/leafgarland/typescript-vim ${START_PLUGINS_DIR}/typescript-vim.vim
+git_clone_or_pull https://github.com/Quramy/tsuquyomi ${START_PLUGINS_DIR}/tsuquyomi.vim
 
 cp dirk.zsh ~/.oh-my-zsh/custom/
-cp dirk-nocheckin.zsh ~/.oh-my-zsh/custom/
+cp gitconfig-aliases ~/.gitconfig
 
 git config --global user.email "dirk@dirkgomez.de"
 
