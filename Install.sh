@@ -19,12 +19,17 @@ function echo_to_file_if_not_exists {
 }
 
 if [ "$(uname)" == "Darwin" ]; then
-  brew install ctags
+  brew install ctags pyenv
 elif [ "$(awk -F= '/^NAME/{print $2}' /etc/os-release)" == "\"Ubuntu\"" ]; then
   apt-get install ctags
 fi
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+fi
+cp zshrc ~/.zshrc
+
+zsh -c ls
 
 START_PLUGINS_DIR=~/.vim/pack/plugins/start
 mkdir -p START_PLUGINS_DIR
