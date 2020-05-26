@@ -61,3 +61,6 @@ helptags ALL
 set ballooneval
 autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
 
+" Mouse
+set mouse=a
+
