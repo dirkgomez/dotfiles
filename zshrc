@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 
 upgrade_oh_my_zsh
 
-export PATH="/usr/local/sbin:$PATH:/Users/dirk/.local/bin"
+export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/"
 export AWS_PAGER=""
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
