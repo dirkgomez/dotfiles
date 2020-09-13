@@ -32,8 +32,10 @@ alias gittopcontrib="git shortlog -ns"
 alias gitdiff="git difftool $1"
 
 # homebrew clean update
-alias brewupdate="brew update && brew upgrade && brew cleanup; brew doctor; brew cask upgrade"
+function brewupdate() {
+  brew update && brew upgrade && brew cleanup; brew doctor; brew upgrade --cask
+}
 
-export PATH="$PATH:/usr/local/sbin:$HOME/.gem/ruby/2.6.0/bin"
-
+export PATH="$PATH:/usr/local/sbin:$HOME/.gem/ruby/2.6.0/bin:/Users/dirk/Library/Android/sdk/platform-tools"
+export ANDROID_SDK=/Users/dirk/Library/Android/sdk
 

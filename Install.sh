@@ -45,13 +45,11 @@ git_clone_or_pull https://github.com/Quramy/tsuquyomi ${START_PLUGINS_DIR}/tsuqu
 
 cp dirk.zsh ~/.oh-my-zsh/custom/
 cp gitconfig-aliases ~/.gitconfig
-cp dirk-nocheckin.zsh ~/.oh-my-zsh/custom/ || true
+[[ -f "dirk-nocheckin.zsh" ]] && cp dirk-nocheckin.zsh ~/.oh-my-zsh/custom/
 
 git config --global user.email "dirk@dirkgomez.de"
 
 cat << EOF > $HOME/.vimrc
 source ~/dotfiles/vim/vimrc.mine
 EOF
-
-echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
 
