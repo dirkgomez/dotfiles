@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx python aws pylint pyenv)
+plugins=(git osx python aws pylint)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,15 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[[ -o login ]] && omz update
+# [[ -o login ]] && omz update
 
 export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/"
 export AWS_PAGER=""
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'

@@ -34,12 +34,18 @@ zsh -c ls
 START_PLUGINS_DIR=~/.vim/pack/plugins/start
 mkdir -p START_PLUGINS_DIR
 
-git_clone_or_pull https://github.com/python-mode/python-mode.git ${START_PLUGINS_DIR}/python-mode
+#git_clone_or_pull https://github.com/python-mode/python-mode.git ${START_PLUGINS_DIR}/python-mode
+git_clone_or_pull https://github.com/prabirshrestha/vim-lsp ${START_PLUGINS_DIR}/vim-lsp
+git_clone_or_pull https://github.com/prabirshrestha/async.vim ${START_PLUGINS_DIR}/async
+git_clone_or_pull https://github.com/thomasfaingnaert/vim-lsp-snippets ${START_PLUGINS_DIR}/vim-lsp-snippets
+git_clone_or_pull https://github.com/thomasfaingnaert/vim-lsp-ultisnips ${START_PLUGINS_DIR}/vim-lsp-ultisnips
+git_clone_or_pull https://github.com/honza/vim-snippets ${START_PLUGINS_DIR}/vim-snippets
+git_clone_or_pull https://github.com/SirVer/ultisnips ${START_PLUGINS_DIR}/ultisnips
 git_clone_or_pull https://github.com/mileszs/ack.vim.git ${START_PLUGINS_DIR}/ack
 git_clone_or_pull https://github.com/morhetz/gruvbox.git ${START_PLUGINS_DIR}/gruvbox
 git_clone_or_pull https://github.com/chriskempson/base16-vim ${START_PLUGINS_DIR}/base16-vim
 git_clone_or_pull https://github.com/ctrlpvim/ctrlp.vim ${START_PLUGINS_DIR}/ctrlp
-git_clone_or_pull https://github.com/davidhalter/jedi-vim.git ${START_PLUGINS_DIR}/jedi.vim
+#git_clone_or_pull https://github.com/davidhalter/jedi-vim.git ${START_PLUGINS_DIR}/jedi.vim
 git_clone_or_pull https://github.com/leafgarland/typescript-vim ${START_PLUGINS_DIR}/typescript-vim.vim
 git_clone_or_pull https://github.com/Quramy/tsuquyomi ${START_PLUGINS_DIR}/tsuquyomi.vim
 

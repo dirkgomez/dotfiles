@@ -36,6 +36,7 @@ function brewupdate() {
   brew update && brew upgrade && brew cleanup; brew doctor; brew upgrade --cask
 }
 
-export PATH="$PATH:/usr/local/sbin:$HOME/.gem/ruby/2.6.0/bin:/Users/dirk/Library/Android/sdk/platform-tools"
+export PATH="$PATH:/usr/local/sbin:$HOME/.gem/ruby/2.6.0/bin:/Users/dirk/Library/Android/sdk/platform-tools:/Users/dirk/Library/Python/3.8/bin"
+
 export ANDROID_SDK=/Users/dirk/Library/Android/sdk
 
