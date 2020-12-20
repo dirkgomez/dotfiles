@@ -17,10 +17,7 @@ function ConvertToIphone() {
   ffmpeg -i "$infile" -strict -2 -vcodec libx264 -profile:v main -level 3.1 -preset medium -crf 23 -x264-params ref=4 -acodec copy -movflags +faststart "$outfile" && rm "$infile"
 }
 
-export EDITOR=vim
-
-# activate python venv
-alias Venv='source ./venv/bin/activate'
+export EDITOR=nvim
 
 # git stuff
 alias gitpretty="git log --graph --oneline --decorate --all"
@@ -36,7 +33,7 @@ function brewupdate() {
   brew update && brew upgrade && brew cleanup; brew doctor; brew upgrade --cask
 }
 
-export PATH="$PATH:/usr/local/sbin:$HOME/.gem/ruby/2.6.0/bin:/Users/dirk/Library/Android/sdk/platform-tools:/Users/dirk/Library/Python/3.8/bin"
+alias Omzupdate="omz update"
 
-export ANDROID_SDK=/Users/dirk/Library/Android/sdk
-
+export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/"
+export AWS_PAGER=""
