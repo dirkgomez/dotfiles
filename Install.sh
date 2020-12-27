@@ -10,6 +10,9 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 fi
 
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 cp dirk.zsh ~/.oh-my-zsh/custom/
 cp gitconfig-aliases ~/.gitconfig
 [[ -f "dirk-nocheckin.zsh" ]] && cp dirk-nocheckin.zsh ~/.oh-my-zsh/custom/
