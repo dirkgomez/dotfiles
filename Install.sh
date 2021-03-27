@@ -8,7 +8,7 @@ fi
 
 cp gitconfig-aliases ~/.gitconfig
 cp zshrc ~/.zshrc
-cp dirk.sh ~/.zshrc.dirk
+cp zshrc.dirk ~/.zshrc.dirk
 
 git config --global user.email "dirk@dirkgomez.de"
 
