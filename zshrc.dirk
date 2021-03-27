@@ -1,3 +1,20 @@
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
+setopt autocd
+
+# more extensive tab completion
+autoload -Uz compinit
+compinit
+
+# completion from both ends
+setopt completeinword
+
+PS1="%n@%m:%4c> "
+
+
+
 function cheat() {
   curl cht.sh/$1
 }
@@ -32,8 +49,6 @@ alias gitdiff="git difftool $1"
 function brewupdate() {
   brew update && brew upgrade && brew cleanup; brew doctor; brew upgrade --cask
 }
-
-alias Omzupdate="omz update"
 
 export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/"
 export AWS_PAGER=""
