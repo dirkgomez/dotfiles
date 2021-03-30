@@ -19,4 +19,4 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 rm -f ~/.config/nvim/init.vim; ln -s $PWD/nvim/init.vim ~/.config/nvim/init.vim
 
 # nvim
-npm install -g bash-language-server
+npm list -g bash-language-server || npm install -g bash-language-server

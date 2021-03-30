@@ -11,10 +11,6 @@ compinit
 # completion from both ends
 setopt completeinword
 
-PS1="%n@%m:%4c> "
-
-
-
 function cheat() {
   curl cht.sh/$1
 }
@@ -49,6 +45,16 @@ alias gitdiff="git difftool $1"
 function brewupdate() {
   brew update && brew upgrade && brew cleanup; brew doctor; brew upgrade --cask
 }
+
+
+# Show git branch
+autoload -Uz vcs_info
+precmd() { vcs_info }
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats '[%b]'
+setopt PROMPT_SUBST
+
+PROMPT='%n@%m:%4c${vcs_info_msg_0_}>'
 
 export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/"
 export AWS_PAGER=""
