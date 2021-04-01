@@ -11,6 +11,18 @@ compinit
 # completion from both ends
 setopt completeinword
 
+function AwsDeleteS3Bucket() {
+  aws s3 rm --recursive s3://$1/
+  aws s3 rb s3://$1
+}
+
+function AwsDeleteS3Buckets() {
+  for var in "$@"
+  do
+    AwsDeleteS3Bucket "$var"
+  done
+}
+
 function cheat() {
   curl cht.sh/$1
 }
