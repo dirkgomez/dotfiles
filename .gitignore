@@ -3,3 +3,4 @@ tags
 *nocheckin
 *-nocheckin.zsh
 *.sw?
+.DS_Store

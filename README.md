@@ -1,18 +1,15 @@
-Dirk's dotfiles
+# Dirk's tools and dotfiles
 
-# Some notes on how I maintain them
+## Create a backup of homebrew settings
 
-## Initializing submodules
-
-```bash
-git submodule init
+```
+brew bundle dump
+cp Brewfile <target>
 ```
 
-## Adding a submodule
+## Restore your homebrew backup
 
-```bash
-git submodule add https://github.com/python-mode/python-mode.git vim/packages/start/python-mode
-cd vim/packages/start/python-mode
-git submodule update --init --recursive
 ```
-
+cd <backuptarget>
+brew bundle
+```

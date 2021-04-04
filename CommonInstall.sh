@@ -1,11 +1,3 @@
-#!/bin/bash -e
-
-if [ "$(uname)" == "Darwin" ]; then
-  brew install ctags 
-elif [ "$(awk -F= '/^NAME/{print $2}' /etc/os-release)" == "\"Ubuntu\"" ]; then
-  apt-get install ctags
-fi
-
 cp gitconfig-aliases ~/.gitconfig
 cp zshrc ~/.zshrc
 cp zshrc.dirk ~/.zshrc.dirk
