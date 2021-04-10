@@ -4,6 +4,10 @@ SAVEHIST=1000
 setopt appendhistory
 setopt autocd
 
+autoload -U select-word-style
+select-word-style bash
+
+
 # more extensive tab completion
 autoload -Uz compinit
 compinit
