@@ -2,6 +2,7 @@ cp gitconfig-aliases ~/.gitconfig
 cp zshrc ~/.zshrc
 cp zshrc.dirk ~/.zshrc.dirk
 
+git config --global user.name "Dirk Gómez"
 git config --global user.email "dirk@dirkgomez.de"
 
 mkdir -p ~/.config/nvim
