@@ -4,9 +4,9 @@ SAVEHIST=1000
 setopt appendhistory
 setopt autocd
 
+# bash-style directory endings
 autoload -U select-word-style
 select-word-style bash
-
 
 # more extensive tab completion
 autoload -Uz compinit
@@ -46,7 +46,9 @@ function ConvertToIphone() {
   ffmpeg -i "$infile" -strict -2 -vcodec libx264 -profile:v main -level 3.1 -preset medium -crf 23 -x264-params ref=4 -acodec copy -movflags +faststart "$outfile" && rm "$infile"
 }
 
-export EDITOR=nvim
+# Use nvim if exists, otherwise use vim
+whence -p vim && export EDITOR=vim
+whence -p nvim && export EDITOR=nvim
 
 # git stuff
 alias gitpretty="git log --graph --oneline --decorate --all"
