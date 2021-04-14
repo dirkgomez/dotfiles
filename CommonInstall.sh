@@ -1,9 +1,6 @@
-cp gitconfig-aliases ~/.gitconfig
+cp gitconfig ~/.gitconfig
 cp zshrc ~/.zshrc
 cp zshrc.dirk ~/.zshrc.dirk
-
-git config --global user.name "Dirk Gómez"
-git config --global user.email "dirk@dirkgomez.de"
 
 mkdir -p ~/.config/nvim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
