@@ -1,4 +1,5 @@
 cp gitconfig ~/.gitconfig
+cp gitignore_global ~/.gitignore_global
 cp zshrc ~/.zshrc
 cp zshrc.dirk ~/.zshrc.dirk
 
