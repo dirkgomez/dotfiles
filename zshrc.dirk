@@ -4,9 +4,7 @@ SAVEHIST=1000
 setopt appendhistory
 setopt autocd
 
-# bash-style directory endings
-autoload -U select-word-style
-select-word-style bash
+WORDCHARS=$WORDCHARS:s:/:
 
 # more extensive tab completion
 autoload -Uz compinit
