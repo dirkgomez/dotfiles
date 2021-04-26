@@ -13,7 +13,7 @@ gr = grep -Ii
 
 [core]
 	precomposeunicode = true
-
+	excludesfile = /Users/dirk/.gitignore_global
 [color]
 	ui = true
 
