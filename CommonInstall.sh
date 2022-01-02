@@ -14,3 +14,4 @@ rm -f ~/.config/nvim/init.vim; ln -s $PWD/nvim/init.vim ~/.config/nvim/init.vim
 
 # nvim
 npm list -g bash-language-server || npm install -g bash-language-server
+npm list -g pyright || npm install -g pyright

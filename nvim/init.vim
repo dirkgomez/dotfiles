@@ -46,7 +46,7 @@ set background=dark
 
 
 lua <<EOF
-require'lspconfig'.pyls.setup{ cmd = { "pyls" } }
+require'lspconfig'.pyright.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.yamlls.setup{}
 require'lspconfig'.jsonls.setup{}
