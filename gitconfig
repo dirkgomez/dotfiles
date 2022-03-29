@@ -14,6 +14,13 @@ gr = grep -Ii
 [core]
 	precomposeunicode = true
 	excludesfile = /Users/dirk/.gitignore_global
+
 [color]
 	ui = true
 
+[includeIf "gitdir:~/Documents/code/work/"]
+	path = ~/Documents/code/work/
+
+# ~/Documents/code/work/.gitconfig
+# [user]
+# 	email = work@...
