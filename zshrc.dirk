@@ -47,7 +47,7 @@ alias gitdiff="git difftool $1"
 
 # homebrew clean update
 function brewupdate() {
-  brew update && brew upgrade && brew cleanup; brew doctor; brew upgrade --cask
+  brew update && brew upgrade && brew cleanup  --prune=all; brew doctor; brew upgrade --cask
 }
 
 
