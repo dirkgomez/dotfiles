@@ -1,4 +1,6 @@
 [alias]
+ci = commit
+st = status
 co = checkout
 cob = checkout -b
 delete-local-branch = branch -d
