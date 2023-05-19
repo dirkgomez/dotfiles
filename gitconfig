@@ -6,6 +6,7 @@ delete-remote-branch = branch -D
 merged = branch --merged
 dmerged = "git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 gr = grep -Ii
+pushmr = push -o merge_request.create
 
 [user]
 	email = dirk@dirkgomez.de
