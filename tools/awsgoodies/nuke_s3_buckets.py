@@ -12,6 +12,6 @@ for bucket_name in sys.argv[1:]:
     s3 = boto3.resource('s3')
     bucket = s3.Bucket(bucket_name)
     print(f"About to delete objects in {bucket_name}")
-    print(bucket.object_versions.delete())
+    bucket.object_versions.delete()
     print(f"About to delete {bucket_name}")
-    print(bucket.delete())
+    bucket.delete()

@@ -1,6 +1,7 @@
 #!/bin/bash
 REPOSITORY_NAME=$1
 
+export AWS_PAGER=""
 IMAGES_TO_DELETE=$(aws ecr list-images --repository-name $REPOSITORY_NAME --query 'imageIds[0:100]' --output json )
 
 while [ "$IMAGES_TO_DELETE" != "[]" ]; do
