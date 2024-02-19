@@ -21,6 +21,17 @@ pushmr = push -o merge_request.create
 [color]
 	ui = true
 
+[pull]
+	rebase = true
+[merge]
+	conflictstyle = zdiff3
+[rerere]
+	enabled = true
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log
+
 [includeIf "gitdir:~/Documents/code/work/"]
 	path = ~/Documents/code/work/
 
