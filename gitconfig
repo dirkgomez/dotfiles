@@ -1,14 +1,12 @@
 [alias]
 ci = commit
 st = status
-co = checkout
-cob = checkout -b
 delete-local-branch = branch -d
 delete-remote-branch = branch -D
-merged = branch --merged
-dmerged = "git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 gr = grep -Ii
 pushmr = push -o merge_request.create
+staash = stash --all
+rebase-i-branch = "!git rebase -i `git merge-base master HEAD`"
 
 [user]
 	email = dirk@dirkgomez.de
@@ -33,8 +31,4 @@ pushmr = push -o merge_request.create
 	submodule = log
 
 [includeIf "gitdir:~/Documents/code/work/"]
-	path = ~/Documents/code/work/
-
-# ~/Documents/code/work/.gitconfig
-# [user]
-# 	email = work@...
+	path = ~/Documents/code/work/.gitconfig
