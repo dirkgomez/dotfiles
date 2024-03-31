@@ -32,10 +32,6 @@ function ConvertToIphone() {
   ffmpeg -i "$infile" -strict -2 -vcodec libx264 -profile:v main -level 3.1 -preset medium -crf 23 -x264-params ref=4 -acodec copy -movflags +faststart "$outfile" && rm "$infile"
 }
 
-# Use nvim if exists, otherwise use vim
-whence -p vim > /dev/null && export EDITOR=vim 
-whence -p nvim > /dev/null && export EDITOR=nvim
-
 # git stuff
 alias gitpretty="git log --graph --oneline --decorate --all"
 alias gitprettyall="git log --oneline --decorate --all --  graph --stat"
@@ -56,7 +52,4 @@ PROMPT='%n@%m:%4c${vcs_info_msg_0_}>'
 export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/"
 export AWS_PAGER=""
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
+[ -e /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh
