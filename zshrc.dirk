@@ -13,7 +13,6 @@ function AwsDeleteS3Buckets() {
   done
 }
 
-<<<<<<< HEAD
 function cheat() {
   curl cht.sh/$1
 }
@@ -31,11 +30,6 @@ function ConvertToIphone() {
   outfile="${infile%.*}.mp4"
 
   ffmpeg -i "$infile" -strict -2 -vcodec libx264 -profile:v main -level 3.1 -preset medium -crf 23 -x264-params ref=4 -acodec copy -movflags +faststart "$outfile" && rm "$infile"
-}
-
-||||||| parent of 8c5d73f (Add Radio aliases)
-function cheat() {
-  curl cht.sh/$1
 }
 
 function compresspdf() {
@@ -57,21 +51,10 @@ function ConvertToIphone() {
 whence -p vim > /dev/null && export EDITOR=vim 
 whence -p nvim > /dev/null && export EDITOR=nvim
 
->>>>>>> 8c5d73f (Add Radio aliases)
-# git stuff
-alias gitpretty="git log --graph --oneline --decorate --all"
-alias gitprettyall="git log --oneline --decorate --all --  graph --stat"
-alias gfiles="git show --pretty='' --name-only $1"
-alias gitstat="git log --stat"
-alias gitchangelog="git log --oneline --no-merges ${1}..HEAD"
-alias gittopcontrib="git shortlog -ns"
-alias gitdiff="git difftool $1"
-
 # homebrew clean update
-function brewupdate() {
+function Brewupdate() {
   brew update && brew upgrade && brew cleanup  --prune=all; brew doctor; brew upgrade --cask
 }
-
 
 PROMPT='%n@%m:%4c${vcs_info_msg_0_}>'
 
