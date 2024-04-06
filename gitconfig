@@ -30,6 +30,8 @@ prettydiff = log --graph --oneline --decorate --all
 	submoduleSummary = true
 [diff]
 	submodule = log
+[init]
+	defaultBranch = main
 
 [includeIf "gitdir:~/Documents/code/work/"]
 	path = ~/Documents/code/work/.gitconfig
