@@ -1,67 +1,29 @@
 # completion from both ends
 setopt completeinword
 
-function AwsDeleteS3Bucket() {
-  aws s3 rm --recursive s3://$1/
-  aws s3 rb s3://$1
-}
-
-function AwsDeleteS3Buckets() {
-  for var in "$@"
-  do
-    AwsDeleteS3Bucket "$var"
-  done
-}
-
-function cheat() {
-  curl cht.sh/$1
-}
-
-function compresspdf() {
+function Compresspdf() {
   tmpfile=$(mktemp /tmp/compresspdf.XXXXXX)
   cp -p "$1" $tmpfile
   gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/printer -dCompatibilityLevel=1.4 -sOutputFile="$tmpfile" "$1"
   mv -f $tmpfile "$1"
 }
 
-function ConvertToIphone() {
-  infile=$1
-  extension="${infile##*.}"
-  outfile="${infile%.*}.mp4"
-
-  ffmpeg -i "$infile" -strict -2 -vcodec libx264 -profile:v main -level 3.1 -preset medium -crf 23 -x264-params ref=4 -acodec copy -movflags +faststart "$outfile" && rm "$infile"
-}
-
-function compresspdf() {
-  tmpfile=$(mktemp /tmp/compresspdf.XXXXXX)
-  cp -p "$1" $tmpfile
-  gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/printer -dCompatibilityLevel=1.4 -sOutputFile="$tmpfile" "$1"
-  mv -f $tmpfile "$1"
-}
-
-function ConvertToIphone() {
-  infile=$1
-  extension="${infile##*.}"
-  outfile="${infile%.*}.mp4"
-
-  ffmpeg -i "$infile" -strict -2 -vcodec libx264 -profile:v main -level 3.1 -preset medium -crf 23 -x264-params ref=4 -acodec copy -movflags +faststart "$outfile" && rm "$infile"
-}
-
-# Use nvim if exists, otherwise use vim
-whence -p vim > /dev/null && export EDITOR=vim 
-whence -p nvim > /dev/null && export EDITOR=nvim
-
-# homebrew clean update
 function Brewupdate() {
   brew update && brew upgrade && brew cleanup  --prune=all; brew doctor; brew upgrade --cask
+  brew reinstall --cask libreoffice-language-pack
 }
 
 PROMPT='%n@%m:%4c${vcs_info_msg_0_}>'
-
 export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/"
 
+# Use nvim if exists, otherwise use vim
+whence -p vim > /dev/null && export EDITOR=vim
+whence -p nvim > /dev/null && export EDITOR=nvim
+
+# asdf setup
 [ -e /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh
 
-alias RadioPuls='cvlc -q http://streams.br.de/puls_2.m3u \&> /dev/null'
-alias RadioNova='cvlc -q https://st03.sslstream.dlf.de/dlf/03/high/aac/stream.aac?aggregator=web \&> /dev/null'
+# listen to streaming radio
+alias ListenToPuls='cvlc -q http://streams.br.de/puls_2.m3u \&> /dev/null'
+alias ListenToDLFNova='cvlc -q https://st03.sslstream.dlf.de/dlf/03/high/aac/stream.aac?aggregator=web \&> /dev/null'
 
