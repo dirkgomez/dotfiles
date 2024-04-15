@@ -1,7 +1,9 @@
 brew install \
             asdf \
             coreutils \
-            curl \
-            git
+            fzf \
+            git \
+            gron \
+            xsv
 
 . ./CommonInstall.sh

@@ -23,6 +23,9 @@ whence -p nvim > /dev/null && export EDITOR=nvim
 # asdf setup
 [ -e /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh
 
+# fzf setup
+  eval "$(fzf --zsh)"
+
 # listen to streaming radio
 alias ListenToPuls='cvlc -q http://streams.br.de/puls_2.m3u &> /dev/null'
 alias ListenToDLFNova='cvlc -q https://st03.sslstream.dlf.de/dlf/03/high/aac/stream.aac\?aggregator\=web &> /dev/null'
