@@ -24,7 +24,10 @@ whence -p nvim > /dev/null && export EDITOR=nvim
 [ -e /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh
 
 # fzf setup
-  eval "$(fzf --zsh)"
+[ -e /usr/local/bin/fzf ] && eval "$(fzf --zsh)"
+
+# rbenv setup
+[ -e /usr/local/bin/rbenv ] && eval "$(rbenv init - zsh)"
 
 # listen to streaming radio
 alias ListenToPuls='cvlc -q http://streams.br.de/puls_2.m3u &> /dev/null'
