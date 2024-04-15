@@ -10,7 +10,7 @@ function Compresspdf() {
 
 function Brewupdate() {
   brew update && brew upgrade && brew cleanup  --prune=all; brew doctor; brew upgrade --cask
-  brew reinstall --cask libreoffice-language-pack
+  brew outdated --cask | grep libreoffice-language-pack && brew reinstall --cask libreoffice-language-pack
 }
 
 PROMPT='%n@%m:%4c${vcs_info_msg_0_}>'
