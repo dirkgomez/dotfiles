@@ -1,3 +1,7 @@
-brew install coreutils curl git
-brew install asdf
+brew install \
+            asdf \
+            coreutils \
+            curl \
+            git
+
 . ./CommonInstall.sh
