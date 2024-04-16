@@ -14,14 +14,15 @@ function Brewupdate() {
 }
 
 PROMPT='%n@%m:%4c${vcs_info_msg_0_}>'
-export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/"
+export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/:/Users/dirk/.gem/ruby/3.2.0/bin" 
 
 # Use nvim if exists, otherwise use vim
 whence -p vim > /dev/null && export EDITOR=vim
 whence -p nvim > /dev/null && export EDITOR=nvim
 
 # asdf setup
-[ -e /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh
+[ -e /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh && \
+  asdf plugin-add python
 
 # fzf setup
 [ -e /usr/local/bin/fzf ] && eval "$(fzf --zsh)"
