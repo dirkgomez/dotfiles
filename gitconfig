@@ -22,6 +22,8 @@ prettydiff = log --graph --oneline --decorate --all
 
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true
 [merge]
 	conflictstyle = zdiff3
 [rerere]
