@@ -1,13 +1,16 @@
 [alias]
-ci = commit
-st = status
 delete-local-branch = branch -d
 delete-remote-branch = branch -D
+discard = reset HEAD --hard
 gr = grep -Ii
+log-pretty = log --graph --oneline --decorate --all
 pushmr = push -o merge_request.create
-staash = stash --all
-rebase-i-branch = "!git rebase -i `git merge-base master HEAD`"
-prettydiff = log --graph --oneline --decorate --all
+pushmrf = push -f -o merge_request.create
+rebase-i-master = "!git rebase -i `git merge-base master HEAD`"
+rebase-i-main = "!git rebase -i `git merge-base main HEAD`"
+rmuntracked = clean -df
+search-commits = "!git rev-list --all | xargs git grep -F"
+stash-all = stash --all
 
 [user]
 	email = dirk@dirkgomez.de
