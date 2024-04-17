@@ -19,14 +19,15 @@ export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/:/Users/dirk/.gem/
 export EDITOR=nvim
 
 # asdf setup
-[ -e /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh && \
-  asdf plugin-add python
+[ -e /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec
+asdf.sh && \asdf plugin-add python
 
 # fzf setup
 [ -e /usr/local/bin/fzf ] && eval "$(fzf --zsh)"
 
 # rbenv setup
 [ -e /usr/local/bin/rbenv ] && eval "$(rbenv init - zsh)"
+eval "$(fzf --zsh)"
 
 # listen to streaming radio
 alias ListenToPuls='cvlc -q http://streams.br.de/puls_2.m3u &> /dev/null'

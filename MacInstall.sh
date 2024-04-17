@@ -1,14 +1,13 @@
 #!/bin/zsh
 brew install \
-            asdf \
-            coreutils \
-            fzf \
-            git \
-            gron \
-            hugo \
-            nvim \
-            pipx \
-            xsv
+    asdf \
+    coreutils \
+    fzf \
+    git \
+    gron \
+    nvim \
+    pipx \
+    xsv
 
 asdf plugin-add python
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
