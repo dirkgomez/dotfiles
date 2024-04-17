@@ -19,8 +19,7 @@ export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin/:/Users/dirk/.gem/
 export EDITOR=nvim
 
 # asdf setup
-[ -e /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec
-asdf.sh && \asdf plugin-add python
+[ -e /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh
 
 # fzf setup
 [ -e /usr/local/bin/fzf ] && eval "$(fzf --zsh)"
