@@ -1,4 +1,6 @@
 [alias]
+co = checkout
+cob = checkout -b
 delete-local-branch = branch -d
 delete-remote-branch = branch -D
 discard = reset HEAD --hard
@@ -8,9 +10,12 @@ pushmr = push -o merge_request.create
 pushmrf = push -f -o merge_request.create
 rebase-i-master = "!git rebase -i `git merge-base master HEAD`"
 rebase-i-main = "!git rebase -i `git merge-base main HEAD`"
-rmuntracked = clean -df
+rm-untracked = clean -df
 search-commits = "!git rev-list --all | xargs git grep -F"
 stash-all = stash --all
+st = status
+reset-hard = "!git reset --hard"
+undo = reset HEAD~1 --mixed
 
 [user]
 	email = dirk@dirkgomez.de
@@ -38,5 +43,5 @@ stash-all = stash --all
 [init]
 	defaultBranch = main
 
-[includeIf "gitdir:~/Documents/code/work/"]
+[includeIf "gitdir:~/Documents/Code/work/"]
 	path = ~/Documents/code/work/.gitconfig
