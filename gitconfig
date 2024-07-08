@@ -42,6 +42,8 @@ undo = reset HEAD~1 --mixed
 	submodule = log
 [init]
 	defaultBranch = main
+[tag]
+	sort = -authordate
 
 [includeIf "gitdir:~/Documents/Code/work/"]
 	path = ~/Documents/code/work/.gitconfig
