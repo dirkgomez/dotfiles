@@ -1,27 +1,29 @@
 [alias]
-	co = checkout
-	cob = checkout -b
-	delete-local-branch = branch -d
-	delete-remote-branch = branch -D
-	discard = reset HEAD --hard
-	gr = grep -Ii
-	log-pretty = log --graph --oneline --decorate --all
-	pushmr = push -o merge_request.create
-	pushmrf = push -f -o merge_request.create
-	rebase-i-master = "!git rebase -i `git merge-base master HEAD`"
-	rebase-i-main = "!git rebase -i `git merge-base main HEAD`"
-	rm-untracked = clean -df
-	search-commits = "!git rev-list --all | xargs git grep -F"
-	stash-all = stash --all
-	st = status -s -b --show-stash
-	reset-hard = "!git reset --hard"
-	undo = reset HEAD~1 --mixed
+    co = checkout
+    cob = checkout -b
+    delete-local-branch = branch -d
+    delete-remote-branch = branch -D
+    discard = reset HEAD --hard
+    gr = grep -Ii
+    log-pretty = log --graph --oneline --decorate --all
+    pushmr = push -o merge_request.create
+    pushmrf = push -f -o merge_request.create
+    rebase-i-master = "!git rebase -i `git merge-base master HEAD`"
+    rebase-i-main = "!git rebase -i `git merge-base main HEAD`"
+    rm-untracked = clean -df
+    search-commits = "!git rev-list --all | xargs git grep -F"
+    stash-all = stash --all
+    st = status -s -b --show-stash
+    reset-hard = "!git reset --hard"
+    undo = reset HEAD~1 --mixed
 
     ci = commit --edit
     amend = commit --amend --no-edit
     edit = commit --amend --only
 
-	# lifted from https://github.com/nedbat/dot/blob/master/.config/git/config
+    delete-local-merged = "!git fetch && git branch --merged | egrep -v 'master|dev|main|staging'  | xargs git branch -d"
+
+    # lifted from https://github.com/nedbat/dot/blob/master/.config/git/config
 
     fa = fetch --all --prune --tags
     pa = "!f() { git push --all; git push --tags; }; f"
@@ -56,7 +58,7 @@
         git ma && \
         git pull upstream $(git primary) --ff-only && \
         git push; \
-    }; f"	
+    }; f"
 
     # Merge a branch, and delete it here and on the origin.
     brmerge = "!f() { \
@@ -71,7 +73,7 @@
         git brmerge $(git rev-parse --abbrev-ref @{-1}); \
     }; f"
 
-	# I'm done with this merged branch, ready to switch back to another one.
+    # I'm done with this merged branch, ready to switch back to another one.
     brdone = "!f() { \
         : git show; \
         local brname=\"$(git symbolic-ref --short HEAD)\" && \
@@ -86,42 +88,42 @@
     flict = "!f(){ git ls-files -u | awk '{print $4}' | sort -u; }; f"
 
 [user]
-	email = dirk@dirkgomez.de
-	name = Dirk Gómez
+    email = dirk@dirkgomez.de
+    name = Dirk Gómez
 
 [core]
-	precomposeunicode = true
-	excludesfile = /Users/dirk/.gitignore_global
+    precomposeunicode = true
+    excludesfile = /Users/dirk/.gitignore_global
 
 [color]
-	ui = true
+    ui = true
 
 [fetch]
     prune = true
 
 [pull]
-	rebase = true
+    rebase = true
 
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
 
 [merge]
-	conflictstyle = zdiff3
+    conflictstyle = zdiff3
 
 [rerere]
-	enabled = true
+    enabled = true
 
 [status]
-	submoduleSummary = true
+    submoduleSummary = true
 
 [diff]
-	submodule = log
+    submodule = log
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [tag]
-	sort = -authordate
+    sort = -authordate
 
 [includeIf "gitdir:~/Documents/Code/work/"]
-	path = ~/Documents/code/work/.gitconfig
+    path = ~/Documents/code/work/.gitconfig
