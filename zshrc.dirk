@@ -35,3 +35,4 @@ alias ListenToRadioLora='cvlc -q https://lora.musiker.cloud/lora-hq.mp3.m3u  > /
 alias ListenToRadioZ='cvlc -q http://snd.radio-z.net:8000/Radio-Z  > /dev/null 2>&1'
 alias ListenToBayern2='cvlc -q https://streams.br.de/bayern2_2.m3u > /dev/null 2>&1'
 alias ListenToRadioEins='cvlc -q http://www.radioeins.de/livemp3 > /dev/null 2>&1'
+alias ListenToM945='cvlc -q https://cast.m945.de/m945-lq.aac'
