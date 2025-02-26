@@ -99,31 +99,52 @@
     ui = true
 
 [fetch]
-    prune = true
+	prune = true
+	pruneTags = true
+	all = true
 
 [pull]
     rebase = true
 
 [push]
-    autoSetupRemote = true
+	autoSetupRemote = true
+	default = simple
+	followTags = true
 
 [merge]
     conflictstyle = zdiff3
 
 [rerere]
-    enabled = true
+	enabled = true
+	autoupdate = true
 
 [status]
     submoduleSummary = true
 
 [diff]
     submodule = log
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 
 [init]
     defaultBranch = main
 
 [tag]
-    sort = -authordate
+	sort = version:refname
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[help]
+	autocorrect = prompt
+
+[commit]
+	verbose = true
 
 [includeIf "gitdir:~/Documents/Code/work/"]
     path = ~/Documents/code/work/.gitconfig
