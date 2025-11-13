@@ -1,5 +1,6 @@
 ---
-applyTo: "**/*.py"
+description: 'Python coding conventions and guidelines'
+applyTo: '**/*.py'
 ---
 Coding standards, domain knowledge, and preferences that AI should follow.
 
