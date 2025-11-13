@@ -122,6 +122,7 @@ def get_usernames(user_ids: List[int], active_only: bool = True) -> List[str]:
 - Use `with` statement for resource management.
 - Use `enumerate` and `zip` for iterating with counters or multiple iterables.
 - Use dictionary and set comprehensions for creating dictionaries and sets.
+- Prefer `match`...`case` for pattern matching over `if`...`elif`...`else` chains.
 
 ```python
 # Bad
@@ -131,6 +132,15 @@ for i in range(len(items)):
 # Good
 for i, item in enumerate(items):
     print(i, item)
+
+# Pattern matching example
+match command:
+    case "start":
+        start()
+    case "stop":
+        stop()
+    case _:
+        print("Unknown command")
 ```
 
 ---
@@ -176,6 +186,7 @@ class ValidationError(MyError):
 - Optimize code only after identifying bottlenecks through profiling.
 - Prefer built-in functions and libraries, as they are usually optimized.
 - Use lazy evaluation (e.g., generators) for large data sets or expensive computations.
+- Consider using `async`/`await` for I/O-bound and high-level structured network code.
 
 ```python
 # Bad: Eager evaluation, loading all data into memory
@@ -185,6 +196,12 @@ data = [load_data(file) for file in files]
 def read_data(files):
     for file in files:
         yield load_data(file)
+
+# Async example
+async def fetch_data(url):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            return await response.json()
 ```
 
 ---
@@ -194,17 +211,30 @@ def read_data(files):
 - Include tests for normal, edge, and invalid inputs.
 - Test error handling, edge cases, and performance.
 - Follow best practices for writing clear, independent, and efficient tests.
+- Use fixtures for setup code, parametrization for multiple input sets, and mocking for external dependencies.
 
 ```python
 import pytest
 
-def test_divide():
+@pytest.fixture
+def sample_data():
+    return [1, 2, 3, 4, 5]
+
+def test_divide(sample_data):
     assert divide(4, 2) == 2
     assert divide(9, 3) == 3
+
+@pytest.mark.parametrize("a,b,expected", [(4, 2, 2), (9, 3, 3)])
+def test_divide_parametrized(a, b, expected):
+    assert divide(a, b) == expected
 
 def test_divide_zero_division():
     with pytest.raises(ZeroDivisionError):
         divide(4, 0)
+
+def test_divide_mocking(mocker):
+    mocker.patch('myapp.module_name.divide', return_value=3)
+    assert divide(4, 2) == 3
 ```
 
 ---
@@ -213,6 +243,7 @@ def test_divide_zero_division():
 - Use the `logging` module for logging messages.
 - Configure logging level and format in the main entry point of the application.
 - Use appropriate log levels: DEBUG, INFO, WARNING, ERROR, CRITICAL.
+- Avoid logging sensitive information such as passwords or personal data.
 
 ```python
 import logging
@@ -230,6 +261,8 @@ def process_data(data):
 - Validate and sanitize all inputs to prevent injection attacks.
 - Use parameterized queries or ORM methods for database access.
 - Avoid exposing sensitive information in error messages or logs.
+- Use environment variables or configuration files for managing secrets and sensitive data.
+- Regularly update dependencies and use security tools to scan for vulnerabilities.
 
 ---
 
@@ -237,4 +270,5 @@ def process_data(data):
 - Use virtual environments to manage dependencies.
 - Pin dependencies to specific versions in `requirements.txt` or `Pipfile.lock`.
 - Regularly update dependencies to incorporate security fixes and improvements.
+- Use tools like `pip-tools` or `Poetry` for dependency management and to generate lock files.
 
