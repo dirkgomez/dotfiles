@@ -1,6 +1,5 @@
 #!/bin/zsh
 brew install \
-    asdf \
     coreutils \
     fzf \
     git \
@@ -14,11 +13,7 @@ brew install \
 [ -e zshrc.local-nocheckin ] && cp zshrc.local-nocheckin ~/.oh-my-zsh/custom/zshrc.local.zsh
 cp zshrc.dirk ~/.oh-my-zsh/custom/zshrc.dirk.zsh
 
-asdf global python 3.12.3 && pip install --user jupyterlab \
- pandas \
- seaborn \
- matplotlib \
- pyarrow \
- scikit-learn
+mkdir -p /Users/dirk/Library/Application\ Support/Code/User/prompts/
+cp copilot/prompts/* /Users/dirk/Library/Application\ Support/Code/User/prompts/
 
 . ./CommonInstall.sh
