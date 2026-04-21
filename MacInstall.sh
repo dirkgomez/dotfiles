@@ -19,4 +19,8 @@ mkdir -p /Users/dirk/Library/Application\ Support/Code/User/prompts/
 cp copilot/prompts/* /Users/dirk/Library/Application\ Support/Code/User/prompts/
 
 cp awesome-copilot/instructions/shell.instructions.md /Users/dirk/Library/Application\ Support/Code/User/prompts/
+
+mkdir -p ~/.copilot/skills/
+cp -r awesome-copilot/skills/pytest-coverage ~/.copilot/skills/
+
 . ./CommonInstall.sh
