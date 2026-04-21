@@ -1,4 +1,6 @@
 #!/bin/zsh
+brew update && brew upgrade && brew cleanup
+
 brew install \
     coreutils \
     fzf \
